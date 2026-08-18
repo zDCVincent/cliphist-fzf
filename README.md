@@ -5,6 +5,18 @@ Credits to [Jannis-baum](https://github.com/jannis-baum), in providing the follo
 [https://github.com/junegunn/fzf/issues/3228#issuecomment-1803402184](https://github.com/junegunn/fzf/issues/3228#issuecomment-1803402184)
 Currently unsure if [Kovid](https://github.com/kovidgoyal/kitty) has merged an official fix, too lazy to check fwiw.
 
+## Examples in use:
+<img width="1235" height="767" alt="image" src="https://github.com/user-attachments/assets/8196dc48-db42-46bb-9d31-b1d403efdfa0" />
+
+<img width="1236" height="761" alt="image" src="https://github.com/user-attachments/assets/2e5b4496-7d42-4ce2-b230-7cefa258462b" />
+
+## Default keybinds:
+`Ctrl+L` Clears history
+`Spacebar` When search is clear, spacebar marks entries for deletion
+`Ctrl+R` removes all selected entries
+`Enter/Double-Click` Copies the highlighted entry to the clipboard and triggers exit
+`Esc` Triggers exit.
+
 ## Dependencies
 **Explicit dependencies:**
 ```
@@ -48,4 +60,17 @@ hl.window_rule({
     center = true
 })
 ```
-*Note, if using UWSM to modify the spawn command ie: `local cmd = "uwsm app -- kitty --class " .. class .. " -- ~/.config/hypr/scripts/cliphist_fzf.sh"`
+*Note, if using UWSM to modify the exec command to be for ex: `local cmd = "uwsm app -- kitty --class " .. class .. " -- ~/.config/hypr/scripts/cliphist_fzf.sh"`
+
+Init the following:
+```lua
+hl.on("hyprland.start", function()
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+end)
+```
+
+Make the script executable:
+```bash
+chmod +x cliphist_fzf.sh
+```
