@@ -12,9 +12,13 @@ Currently unsure if [Kovid](https://github.com/kovidgoyal/kitty) has merged an o
 
 ## Default keybinds:
 `Ctrl+L` Clears history
+
 `Spacebar` When search is clear, spacebar marks entries for deletion
+
 `Ctrl+R` removes all selected entries
+
 `Enter/Double-Click` Copies the highlighted entry to the clipboard and triggers exit
+
 `Esc` Triggers exit.
 
 ## Dependencies
@@ -35,7 +39,9 @@ socat
 Respectively:
 
 -Use in other WMs is possible but just be sure to swap out any hyprctl calls for other WMs, so this is recommended but not required for core function.
+
 -Relies on `kitty icat` for image display but should function fine in other terminals like foot (without image previews). It should be fairly simple to swap out the graphics protocol to swap terminals if preferred. IIRC Ghostty supports the kitty graphics protocl and provides  the same icat command so this should function with minimal/no edits.
+
 -Socket cat was utilized to listen to the hypr IPC event socket for any focus changes away from the clipboard window class and trigger a trapped exit. Technically not necessary and can be gutted.
 
 ## Minimal implementation example (Hyprlua):
