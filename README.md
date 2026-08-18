@@ -1,9 +1,9 @@
 ## Description
 Queries cliphist history in fzf with previews and some basic keybinds for clipboard management.  I opted to use IPC over the recommended lua implementation because I suck at lua but I am very open to other implementations of this script, theoretically this should run faster in lua using native hyprlua. I don't currently have any plans to maintain this etc, mainly posting this to just share my implementation thus I give full permission to anyone to modify or distribute this file for any reason.
 
-Credits to [Jannis-baum](https://github.com/jannis-baum), in providing the following solution to `kitty icat --clear` not functioning as intended and providing the following: `printf "\x1b_Ga=d,d=A\x1b\\"` to clear all displayed iamges. Link to the post for reference:
-
+Credits to [Jannis-baum](https://github.com/jannis-baum), in providing the following solution to `kitty icat --clear` not functioning as intended and providing the following: `printf "\x1b_Ga=d,d=A\x1b\\"` to clear all displayed iamges. Link to the post for reference: 
 [https://github.com/junegunn/fzf/issues/3228#issuecomment-1803402184](https://github.com/junegunn/fzf/issues/3228#issuecomment-1803402184)
+
 
 Currently unsure if [Kovid](https://github.com/kovidgoyal/kitty) has merged an official fix, too lazy to check fwiw.
 
